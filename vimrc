@@ -1,7 +1,17 @@
-" vim 目录显示配置 start
 execute pathogen#infect()
-nnoremap <silent> <F2> :NERDTree<CR>
+
+" vim 目录显示配置 start
+nmap <F2> :NERDTree<CR>
 " vim 目录显示配置 end
+
+" TagBar配置start
+nmap <F1> :TagbarToggle<CR>
+" TagBar配置end
+
+" -------------------------------------------------------------------------------------------------
+let g:vim_markdown_frontmatter=1
+let g:Powerline_symbols = 'fancy'
+set fillchars+=stl:\ ,stlnc:\
 
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
@@ -16,12 +26,15 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 set mouse=a						" 增加鼠标点击
+set clipboard=unnamed " 支持系统剪贴板
 set showmatch         " 高亮显示对应的括号
 set number            " 显示行号
 set cindent           " C风格的对齐方式
 set autoindent        " 自动对齐
 set confirm           " 在处理未保存或只读文件的时候，弹出确认
 set tabstop=2         " Tab键的宽度
+set ts=2							" Tab的缩进位2个空格
+set expandtab         " Tab替换空格
 syntax on             " 自动语法高亮
 
 " 不要生成swap文件，当buffer被丢弃的时候隐藏它
@@ -59,3 +72,4 @@ set fileencodings=usc-bom,utf-8,cp936
 colorscheme desert
 " 改变行号的颜色
 :highlight LineNr ctermfg=red
+
